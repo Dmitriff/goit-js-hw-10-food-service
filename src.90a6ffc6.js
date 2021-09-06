@@ -11,10 +11,10 @@ var e,t=arguments[3];!function(t,r){"object"==typeof exports&&"object"==typeof m
 },{}],"Kgfu":[function(require,module,exports) {
 "use strict";var e=t(require("../db/menu.json")),r=t(require("../templates/menu.hbs")),u=t(require("./refs"));function t(e){return e&&e.__esModule?e:{default:e}}u.default.menuContainer.insertAdjacentHTML("beforeend",(0,r.default)(e.default));
 },{"../db/menu.json":"Ei4I","../templates/menu.hbs":"dgbP","./refs":"VyiV"}],"yj0S":[function(require,module,exports) {
-"use strict";var e=t(require("./refs"));function t(e){return e&&e.__esModule?e:{default:e}}const a={LIGHT:"light-theme",DARK:"dark-theme"};localStorage.getItem("class")?(e.default.body.classList.add(localStorage.getItem("class")),localStorage.getItem("class")===a.LIGHT?e.default.inputCheckbox.checked=!1:e.default.inputCheckbox.checked=!0):(localStorage.setItem("class",a.LIGHT),e.default.body.classList.add(a.LIGHT)),e.default.inputCheckbox.addEventListener("change",()=>{localStorage.getItem("class")===a.LIGHT?(localStorage.setItem("class",a.DARK),e.default.body.classList.replace(a.LIGHT,a.DARK)):(localStorage.setItem("class",a.LIGHT),e.default.body.classList.replace(a.DARK,a.LIGHT))});
+"use strict";var e=t(require("./refs"));function t(e){return e&&e.__esModule?e:{default:e}}const a={LIGHT:"light-theme",DARK:"dark-theme"};function l(){localStorage.getItem("class")===a.LIGHT?e.default.inputCheckbox.checked=!1:e.default.inputCheckbox.checked=!0}e.default.body.classList.add(!localStorage.getItem("class")),localStorage.setItem("class",a.LIGHT),e.default.body.classList.add(a.LIGHT),l(),e.default.inputCheckbox.addEventListener("change",()=>{localStorage.getItem("class")===a.LIGHT?(localStorage.setItem("class",a.DARK),e.default.body.classList.replace(a.LIGHT,a.DARK)):(localStorage.setItem("class",a.LIGHT),e.default.body.classList.replace(a.DARK,a.LIGHT))});
 },{"./refs":"VyiV"}],"Tnu0":[function(require,module,exports) {
 
 },{}],"Focm":[function(require,module,exports) {
 "use strict";require("./js/menu-markup"),require("./js/change-theme"),require("./styles.css");
 },{"./js/menu-markup":"Kgfu","./js/change-theme":"yj0S","./styles.css":"Tnu0"}]},{},["Focm"], null)
-//# sourceMappingURL=/goit-js-hw-10-food-service/src.6119a99d.js.map
+//# sourceMappingURL=/goit-js-hw-10-food-service/src.90a6ffc6.js.map
