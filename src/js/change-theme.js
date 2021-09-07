@@ -5,11 +5,16 @@ const Theme = {
   DARK: 'dark-theme',
 };
 
-refs.body.classList.add(!localStorage.getItem('class'));
-localStorage.setItem('class', Theme.LIGHT);
-{
+if (!localStorage.getItem('class')) {
+  localStorage.setItem('class', Theme.LIGHT);
   refs.body.classList.add(Theme.LIGHT);
-  getCurrentTheme();
+} else {
+  refs.body.classList.add(localStorage.getItem('class'));
+  if (localStorage.getItem('class') === Theme.LIGHT) {
+    refs.inputCheckbox.checked = false;
+  } else {
+    refs.inputCheckbox.checked = true;
+  }
 }
 
 refs.inputCheckbox.addEventListener('change', () => {
@@ -21,11 +26,3 @@ refs.inputCheckbox.addEventListener('change', () => {
     refs.body.classList.replace(Theme.DARK, Theme.LIGHT);
   }
 });
-
-function getCurrentTheme() {
-  if (localStorage.getItem('class') === Theme.LIGHT) {
-    refs.inputCheckbox.checked = false;
-  } else {
-    refs.inputCheckbox.checked = true;
-  }
-}
